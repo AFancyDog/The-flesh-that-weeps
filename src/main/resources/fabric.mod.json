@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "fleshweep",
+	"version": "${version}",
+	"name": "The Flesh That Weeps",
+	"description": "The flesh is weeping,",
+	"authors": [
+		"AFancyDog"
+	],
+	"contact": {
+		"discord": "afancydog"
+
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/fleshweep/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"dev.afancydog.fleshweep.TheFleshThatWeeps"
+		],
+		"client": [
+			"dev.afancydog.fleshweep.TheFleshThatWeepsClient"
+		]
+	},
+	"mixins": [
+		"fleshweep.mixins.json",
+		{
+			"config": "fleshweep.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.14",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
