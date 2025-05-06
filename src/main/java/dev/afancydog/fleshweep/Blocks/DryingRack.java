@@ -8,6 +8,8 @@ import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.screen.NamedScreenHandlerFactory;
+import net.minecraft.state.StateManager;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ItemScatterer;
@@ -64,7 +66,11 @@ public class DryingRack extends BlockWithEntity implements BlockEntityProvider {
         return ActionResult.SUCCESS;
     }
 
-
+    @Override
+    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+        builder.add(Properties.AXIS);
+        super.appendProperties(builder);
+    }
 
     @Nullable
     @Override
