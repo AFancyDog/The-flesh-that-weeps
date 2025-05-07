@@ -3,8 +3,8 @@
 	"texture_size": [64, 64],
 	"textures": {
 		"1": "minecraft:block/oak_log",
-		"2": "minecraft:block/cauldron",
-		"particle": "minecraft:block/cauldron"
+		"2": "minecraft:block/cauldron_inner",
+		"particle": "minecraft:block/cauldron_inner"
 	},
 	"elements": [
 		{

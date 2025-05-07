@@ -1,5 +1,7 @@
 {
-  "item.fleshweep.flesh_chunk": "Flesh Chunk"
+  "item.fleshweep.flesh_chunk": "Flesh Chunk",
+  "screen.fleshweep.drying_rack": "Drying Rack",
+  "block.fleshweep.drying_rack": "Drying Rack"
 
 
 }

@@ -23,7 +23,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class DryingRackEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
 
-    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(2,ItemStack.EMPTY);
+    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(3,ItemStack.EMPTY);
 
     private static final int INPUT_SLOT = 0;
     private static final int OUTPUT_SLOT1 = 1;
@@ -57,7 +57,7 @@ public class DryingRackEntity extends BlockEntity implements ExtendedScreenHandl
 
             @Override
             public int size() {
-                return 2;
+                return 3;
             }
         };
     }
@@ -74,7 +74,7 @@ public class DryingRackEntity extends BlockEntity implements ExtendedScreenHandl
 
     @Override
     public Text getDisplayName() {
-        return Text.translatable("drying_rack");
+        return Text.translatable("screen.fleshweep.drying_rack");
     }
 
     @Override

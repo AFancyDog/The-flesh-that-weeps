@@ -21,20 +21,21 @@ public class DryingRackScreenHandler extends ScreenHandler {
 
     public DryingRackScreenHandler(int syncID, PlayerInventory inventory, PacketByteBuf buf){
         this(syncID,inventory,inventory.player.getWorld().getBlockEntity(buf.readBlockPos()),
-                new ArrayPropertyDelegate(2));
+                new ArrayPropertyDelegate(3));
     }
 
 
     public DryingRackScreenHandler(int syncID, PlayerInventory playerInventory, BlockEntity blockEntity, PropertyDelegate arrayPropertyDelegate) {
         super(ModScreenHandlers.DRYING_RACK_SCREEN_HANDLER,syncID);
-        checkSize(((Inventory) blockEntity),2);
+        checkSize(((Inventory) blockEntity),3);
         this.inventory = ((Inventory) blockEntity);
         inventory.onOpen(playerInventory.player);
         this.propertyDelegate = arrayPropertyDelegate;
         this.blockEntity = ((DryingRackEntity) blockEntity);
 
-        this.addSlot(new Slot(inventory,0,80,11));
-        this.addSlot(new Slot(inventory,1,80,59));
+        this.addSlot(new Slot(inventory,0,76,10));
+        this.addSlot(new Slot(inventory,1,90,54));
+        this.addSlot(new Slot(inventory,2,63,54));
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
         addProperties(arrayPropertyDelegate);
@@ -88,7 +89,7 @@ public class DryingRackScreenHandler extends ScreenHandler {
     public int getScaledProgress() {
         int progress = this.propertyDelegate.get(0);
         int maxProgress = this.propertyDelegate.get(1);  // Max Progress
-        int progressArrowSize = 26; // This is the width in pixels of your arrow
+        int progressArrowSize = 22; // This is the width in pixels of your arrow
 
         return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
     }

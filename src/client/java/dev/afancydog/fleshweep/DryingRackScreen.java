@@ -42,7 +42,7 @@ public class DryingRackScreen extends HandledScreen<DryingRackScreenHandler> {
 
     private void renderProgressArrow(DrawContext context, int x, int y) {
         if(handler.isCrafting()){
-            context.drawTexture(TEXTURE,x+85,y+30, 167,0,8,handler.getScaledProgress());
+            context.drawTexture(TEXTURE,x+75,y+31, 176,1,17,handler.getScaledProgress());
         }
     }
 

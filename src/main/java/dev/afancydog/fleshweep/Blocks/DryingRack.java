@@ -2,6 +2,7 @@ package dev.afancydog.fleshweep.Blocks;
 
 import dev.afancydog.fleshweep.Entities.DryingRackEntity;
 import dev.afancydog.fleshweep.Entities.ModBlockEntities;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
@@ -16,6 +17,9 @@ import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.block.BlockEntityProvider;
+import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.util.shape.VoxelShapes;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
 import org.jetbrains.annotations.Nullable;
@@ -34,6 +38,7 @@ public class DryingRack extends BlockWithEntity implements BlockEntityProvider {
 
     public DryingRack(Settings settings) {
         super(settings);
+        settings.nonOpaque();
     }
 
     @Override
@@ -64,6 +69,11 @@ public class DryingRack extends BlockWithEntity implements BlockEntityProvider {
         }
 
         return ActionResult.SUCCESS;
+    }
+
+    @Override
+    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        return VoxelShapes.cuboid(0,0,0,1,1,1);
     }
 
     @Override
