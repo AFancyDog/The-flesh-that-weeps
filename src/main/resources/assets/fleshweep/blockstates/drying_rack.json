@@ -1,5 +1,26 @@
 {
   "variants": {
-    "": { "model": "fleshweep:block/drying_rack" }
+    "facing=north": {
+      "model": "fleshweep:block/drying_rack",
+      "uvlock": false
+    },
+    "facing=east": {
+      "model": "fleshweep:block/drying_rack",
+      "y": 90,
+      "uvlock": false
+    },
+    "facing=south": {
+      "model": "fleshweep:block/drying_rack",
+      "y": 180,
+      "uvlock": false
+    },
+    "facing=west": {
+      "model": "fleshweep:block/drying_rack",
+      "y": 270,
+      "uvlock": false
+    }
   }
 }
+
+
+
